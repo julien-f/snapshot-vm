@@ -1,0 +1,26 @@
+{
+  "bin": {
+    "snapshot": "index.js"
+  },
+  "dependencies": {
+    "@xen-orchestra/async-map": "0.0.0",
+    "defer": "^1.0.0",
+    "golike-defer": "^0.4.1",
+    "lodash": "^4.17.11",
+    "promise-toolbox": "^0.11.0",
+    "xen-api": "^0.24.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier": "^1.16.4"
+  },
+  "engines": {
+    "node": ">=7.6"
+  }
+}
