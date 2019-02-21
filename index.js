@@ -106,7 +106,7 @@ Xapi.prototype._deleteVm = async function _deleteVm(
             return pDelay(5e3).then(test);
           };
           const test = async () => {
-            const vdi = await this.getRecord("VBD", vdiRef);
+            const vdi = await this.getRecord("VDI", vdiRef);
             return (
               // Only remove VBDs not attached to other VMs.
               vdi.VBDs.length < 2 ||
