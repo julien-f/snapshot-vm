@@ -20,9 +20,8 @@ const pRetry = require("./_pRetry");
 
 const isValidRef = ref => ref !== NULL_REF && isOpaqueRef(ref);
 
-async function getVmDisks(vm) {
+async function getVmDisks(xapi, vm) {
   const disks = { __proto__: null };
-  const xapi = vm.$xapi;
   await asyncMap(xapi.getRecords("VBD", vm.VBDs), async vbd => {
     let vdiRef;
     if (vbd.type === "Disk" && isValidRef((vdiRef = vbd.VDI))) {
@@ -76,7 +75,7 @@ Xapi.prototype._deleteVm = async function _deleteVm(
   ]);
 
   // must be done before destroying the VM
-  const disks = await getVmDisks(vm);
+  const disks = await getVmDisks(this, vm);
 
   // this cannot be done in parallel, otherwise disks and snapshots will be
   // destroyed even if this fails
