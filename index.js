@@ -3,7 +3,7 @@
 process.env.DEBUG = "*";
 
 const defer = require("golike-defer").default;
-const asyncMap = require("@xen-orchestra/async-map");
+const asyncMap = require("@xen-orchestra/async-map").default;
 const { ignoreErrors, pDelay } = require("promise-toolbox");
 const { createClient, isOpaqueRef, NULL_REF, Xapi } = require("xen-api");
 
